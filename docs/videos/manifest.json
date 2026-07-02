@@ -1,0 +1,46 @@
+{
+  "generatedAt": "2026-07-02T16:52:16.424Z",
+  "baseUrl": "http://127.0.0.1:4173",
+  "videos": [
+    {
+      "file": "course-01-home.webm",
+      "route": "/",
+      "durationSeconds": 9.3
+    },
+    {
+      "file": "course-02-getting-started.webm",
+      "route": "/getting-started",
+      "durationSeconds": 8.6
+    },
+    {
+      "file": "course-03-hello-world.webm",
+      "route": "/tutorials/hello-world",
+      "durationSeconds": 8.7
+    },
+    {
+      "file": "course-04-runtime-semantics.webm",
+      "route": "/runtime/semantics",
+      "durationSeconds": 9.1
+    },
+    {
+      "file": "course-05-recipe-scatter-gather-basic.webm",
+      "route": "/recipes/scatter-gather-basic",
+      "durationSeconds": 12.9
+    },
+    {
+      "file": "course-06-recipe-scatter-gather-ai-complete.webm",
+      "route": "/recipes/scatter-gather-ai-complete",
+      "durationSeconds": 13
+    },
+    {
+      "file": "course-07-recipe-scatter-gather-quorum-timeout.webm",
+      "route": "/recipes/scatter-gather-quorum-timeout",
+      "durationSeconds": 13.5
+    },
+    {
+      "file": "course-08-scenarios.webm",
+      "route": "/scenarios",
+      "durationSeconds": 11.9
+    }
+  ]
+}

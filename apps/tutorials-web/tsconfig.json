@@ -1,0 +1,30 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "lib": ["DOM", "DOM.Iterable", "ES2022"],
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "baseUrl": ".",
+    "paths": {
+      "@agentic-cookbook/aws-durable-harness": [
+        "../aws-durable-harness/src/index.ts"
+      ],
+      "@agentic-cookbook/temporal-harness": [
+        "../temporal-harness/src/index.ts"
+      ],
+      "@agentic-cookbook/test-kit": ["../../packages/test-kit/src/index.ts"],
+      "@agentic-cookbook/workflow-spec": [
+        "../../packages/workflow-spec/src/index.ts"
+      ]
+    },
+    "rootDirs": [".", "./.react-router/types"],
+    "types": ["node", "vite/client"]
+  },
+  "include": [
+    "app",
+    "react-router.config.ts",
+    "vite.config.ts",
+    ".react-router/types/**/*"
+  ]
+}

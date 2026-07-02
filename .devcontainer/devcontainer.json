@@ -1,0 +1,44 @@
+{
+  "name": "Agentic Workflow Cookbook",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm",
+  "remoteUser": "node",
+  "updateRemoteUserUID": true,
+  "hostRequirements": {
+    "cpus": 4,
+    "memory": "8gb",
+    "storage": "16gb"
+  },
+  "mounts": [
+    "source=${localWorkspaceFolderBasename}-node-modules,target=${containerWorkspaceFolder}/node_modules,type=volume",
+    "source=${localWorkspaceFolderBasename}-pnpm-store,target=/home/node/.pnpm-store,type=volume"
+  ],
+  "forwardPorts": [5173],
+  "portsAttributes": {
+    "5173": {
+      "label": "Tutorials web app and scenario runner",
+      "onAutoForward": "notify"
+    }
+  },
+  "postCreateCommand": "sudo chown -R node:node node_modules /home/node/.pnpm-store && sudo npm install -g pnpm@10.5.2 && pnpm install --frozen-lockfile --store-dir /home/node/.pnpm-store",
+  "postAttachCommand": "sh scripts/start-demo-workspace.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "biomejs.biome",
+        "vitest.explorer"
+      ],
+      "settings": {
+        "editor.defaultFormatter": "biomejs.biome",
+        "editor.formatOnSave": true,
+        "typescript.tsdk": "node_modules/typescript/lib"
+      }
+    },
+    "codespaces": {
+      "openFiles": [
+        "README.md",
+        "docs/runnable-workspaces.md",
+        "docs/getting-started.md"
+      ]
+    }
+  }
+}

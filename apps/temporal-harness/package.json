@@ -1,0 +1,27 @@
+{
+  "name": "@agentic-cookbook/temporal-harness",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run --no-cache",
+    "lint": "biome check .",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@agentic-cookbook/ai-judge-fixtures": "workspace:*",
+    "@agentic-cookbook/workflow-spec": "workspace:*",
+    "@temporalio/activity": "^1.11.3",
+    "@temporalio/client": "^1.11.3",
+    "@temporalio/testing": "^1.11.3",
+    "@temporalio/worker": "^1.11.3",
+    "@temporalio/workflow": "^1.11.3"
+  },
+  "devDependencies": {
+    "@agentic-cookbook/test-kit": "workspace:*"
+  }
+}

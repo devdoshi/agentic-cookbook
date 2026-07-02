@@ -1,0 +1,13 @@
+{
+  "generatedAt": "2026-07-02T16:58:04.462Z",
+  "baseUrl": "http://127.0.0.1:4183",
+  "video": "demo-recipes-and-scenarios.webm",
+  "gif": "demo-recipes-and-scenarios.gif",
+  "screenshots": [
+    "demo-recipe-ready.png",
+    "demo-recipe-temporal.png",
+    "demo-recipe-aws-durable.png",
+    "demo-scenarios-temporal.png",
+    "demo-scenarios-aws-durable.png"
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "name": "agentic-cookbook",
+  "private": true,
+  "packageManager": "pnpm@10.5.2",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "test:temporal": "turbo run test --filter=@agentic-cookbook/temporal-harness",
+    "test:durable": "turbo run test --filter=@agentic-cookbook/aws-durable-harness",
+    "test:local": "pnpm run test:durable && pnpm run test:temporal",
+    "test:ui": "pnpm --filter @agentic-cookbook/tutorials-web test:ui",
+    "demo": "pnpm --filter @agentic-cookbook/tutorials-web dev --host 0.0.0.0",
+    "demo:record": "pnpm --filter @agentic-cookbook/tutorials-web demo:record",
+    "videos:record": "pnpm --filter @agentic-cookbook/tutorials-web videos:record",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "check": "turbo run lint typecheck test",
+    "clean": "turbo run clean",
+    "verify:devcontainer": "sh scripts/verify-devcontainer.sh",
+    "ci:docker:build": "docker build -f Dockerfile.ci -t agentic-cookbook-ci .",
+    "ci:docker:check": "docker run --rm agentic-cookbook-ci",
+    "ci:docker": "pnpm run ci:docker:build && pnpm run ci:docker:check"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@types/node": "^22.13.10",
+    "turbo": "^2.4.4",
+    "typescript": "^5.8.2",
+    "vitest": "^2.1.8"
+  }
+}

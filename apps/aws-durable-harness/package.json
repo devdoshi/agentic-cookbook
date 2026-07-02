@@ -1,0 +1,24 @@
+{
+  "name": "@agentic-cookbook/aws-durable-harness",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run --no-cache",
+    "lint": "biome check .",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@agentic-cookbook/ai-judge-fixtures": "workspace:*",
+    "@agentic-cookbook/workflow-spec": "workspace:*",
+    "@aws/durable-execution-sdk-js": "^1.0.2",
+    "@aws/durable-execution-sdk-js-testing": "^1.1.1"
+  },
+  "devDependencies": {
+    "@agentic-cookbook/test-kit": "workspace:*"
+  }
+}

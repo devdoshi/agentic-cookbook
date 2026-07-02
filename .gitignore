@@ -1,0 +1,17 @@
+node_modules
+.pnpm-store
+.turbo
+dist
+build
+.react-router
+coverage
+.temporal
+.playwright-cli
+output
+
+.env
+.env.*
+!.env.example
+
+*.log
+.DS_Store

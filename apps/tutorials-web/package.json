@@ -1,0 +1,45 @@
+{
+  "name": "@agentic-cookbook/tutorials-web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "react-router dev",
+    "build": "react-router build",
+    "start": "react-router-serve ./build/server/index.js",
+    "videos:install": "playwright install chromium",
+    "demo:record": "node ./scripts/record-demo-media.mjs",
+    "videos:record": "node ./scripts/record-course-videos.mjs",
+    "test:ui": "node ./scripts/ui-smoke.mjs",
+    "test": "vitest run",
+    "lint": "biome check .",
+    "typecheck": "react-router typegen && tsc --noEmit",
+    "clean": "rm -rf build .react-router"
+  },
+  "dependencies": {
+    "@agentic-cookbook/aws-durable-harness": "workspace:*",
+    "@agentic-cookbook/temporal-harness": "workspace:*",
+    "@agentic-cookbook/test-kit": "workspace:*",
+    "@agentic-cookbook/workflow-spec": "workspace:*",
+    "@json-render/core": "^0.6.1",
+    "@json-render/react": "^0.6.1",
+    "@react-router/dev": "^7.13.0",
+    "@react-router/node": "^7.13.0",
+    "@react-router/serve": "^7.13.0",
+    "@trpc/server": "^11.10.0",
+    "isbot": "^5.1.35",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "react-router": "^7.13.0",
+    "superjson": "^2.2.6",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@opentelemetry/api": "^1.9.0",
+    "@opentelemetry/sdk-trace-base": "^2.5.1",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "playwright": "^1.58.2",
+    "vite": "^7.1.9"
+  }
+}

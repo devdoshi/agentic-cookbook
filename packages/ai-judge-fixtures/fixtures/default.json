@@ -1,0 +1,9 @@
+{
+  "threshold": 0.9,
+  "scoresByCompletedCount": {
+    "0": 0.2,
+    "1": 0.45,
+    "2": 0.91,
+    "3": 0.97
+  }
+}

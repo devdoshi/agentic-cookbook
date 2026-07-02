@@ -1,0 +1,36 @@
+name: ci
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  devcontainer:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run durable checks and UI smoke in Dev Container
+        uses: devcontainers/ci@v0.3
+        with:
+          push: never
+          runCmd: |
+            set -eux
+            sudo npm install -g pnpm@10.5.2
+            pnpm install --frozen-lockfile --store-dir /home/node/.pnpm-store
+            USE_DIRECT_PNPM=1 pnpm run verify:devcontainer
+
+  check:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build ci image
+        run: docker build -f Dockerfile.ci -t agentic-cookbook-ci .
+      - name: Run checks in container
+        run: docker run --rm agentic-cookbook-ci

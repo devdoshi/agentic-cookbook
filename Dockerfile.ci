@@ -1,0 +1,19 @@
+FROM node:22-bookworm-slim
+
+WORKDIR /workspace
+
+ENV PNPM_HOME=/pnpm
+ENV PATH=$PNPM_HOME:$PATH
+ENV CI=1
+
+RUN apt-get update \
+  && apt-get install -y --no-install-recommends ca-certificates \
+  && rm -rf /var/lib/apt/lists/*
+
+RUN corepack enable && corepack prepare pnpm@10.5.2 --activate
+
+COPY . .
+
+RUN pnpm install --frozen-lockfile
+
+CMD ["pnpm", "check"]
